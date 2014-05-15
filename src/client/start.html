@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>HAWK</title>
+
+	<link rel="stylesheet" href="bootstrap-3.1.1/css/bootstrap.css">
+
+	<link rel="stylesheet" href="css/styles.css">
+
+	<script src="jquery-1.11.0.js"></script>
+	<script src="bootstrap-3.1.1/js/bootstrap.js"></script>
+
+	<script>
+		//Click Events setzen, wenn Seite geladen
+		window.onload = function () {
+
+			//Navigations DIV suchen und merken
+			$nav = $('#navigation');
+
+			//Click vom Menübutton
+			$('#toggle').click(function() {
+				//der Navigation die Klasse .active hinzufügen/entfernen
+				$nav.toggleClass('active');
+			});
+
+			//Click außerhalb des Menüs
+			$(document).click(function(e) {
+				//wenn geklicktes Element nicht innerhalb des Menüs, dann...
+				if(!$(e.target).closest($nav).length) {
+					//wenn Menü aktiv ist, dann...
+					if($nav.hasClass('active')) {
+						//Menü Klasse entfernen
+						$nav.removeClass('active');
+					}
+				}
+			});
+
+			var $button = $('.description-toggle');
+
+			$('.description').hide();
+
+				$button.click(function(e) {
+					var $desc = $(this).parent().parent().find('.description');
+					$desc.toggle();
+					if($desc.is(':visible')) {
+						$(this).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+					} else {
+						$(this).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+					}
+				});
+
+
+		};
+
+	</script>
+
+</head>
+
+<body>
+	<div class="row">
+		<div id="navigation" class="navigation">
+			<button type="button" id="toggle" class="mobile-toggle">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</button>
+
+			<div class="hawk-logo-small"></div>
+			<div class="profile">
+				<h1>Mein Profil</h1>
+				<ul>
+					<li>479521</li>
+					<li>Fakultät Gestaltung</li>
+					<li>Digitale Medien</li>
+				</ul>
+			</div>
+			<div class="courses">
+				<h1>Meine Kurse</h1>
+				<ul>
+					<li>
+						<h2 data-tag="course">Team & Strategie</h2>
+						<p data-tag="room">Raum 120</p>
+						<p data-tag="time">Mo. 10:00 bis 14:00</p>
+					</li>
+					<li>
+						<h2>Wissenschaftliches Arbeiten</h2>
+						<p>Raum 204</p>
+						<p>Di. 8:30 bis 9:30</p>
+					</li>
+				</ul>
+				<div class="add">
+					<button type="button" data-toggle="modal" data-target="#add-course"><span class="glyphicon glyphicon-plus"></span> Kurs hinzufügen</button><br>
+					<button type="button" data-toggle="modal" data-target="#new-course"><span class="glyphicon glyphicon-plus"></span> Neuer Kurs</button>
+				</div>
+			</div>
+			<div class="archive">
+				<h1>Mein Archiv</h1>
+				<ul>
+					<li><span class="glyphicon glyphicon-folder-close"></span>April</li>
+					<li><span class="glyphicon glyphicon-folder-open"></span>Mai
+						<ul>
+							<li><span class="glyphicon glyphicon-folder-close"></span>05.05.2014</li>
+							<li><span class="glyphicon glyphicon-folder-close"></span>12.05.2014</li>
+							<li><span class="glyphicon glyphicon-folder-close"></span>19.05.2014</li>
+							<li><span class="glyphicon glyphicon-folder-close"></span>26.05.2014</li>
+						</ul>
+					</li>
+					<li><span class="glyphicon glyphicon-folder-close"></span>Juni</li>
+					<li><span class="glyphicon glyphicon-folder-close"></span>Juli</li>
+					<li><span class="glyphicon glyphicon-folder-close"></span>August</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="header">
+				<div class="header-content">
+					<div class="data">
+						<h3 data-tag="course">Team &amp; Strategie</h3>
+						<p>Raum <span data-tag="room">305</span></p>
+						<p><span data-tag="day">Mo.</span> <span data-tag="time-from">09:30</span> - <span data-tag="time-till">12:00</span> Uhr</p>
+						<p data-tag="teacher">Dipl. Des. Bianka Grottendieck</p>
+						<p data-tag="email">kontakt@b-grottendieck.de</p>
+					</div>
+					<div>
+						<h3>Beschreibung<span class="description-toggle glyphicon glyphicon-chevron-down"></span></h3>
+						<div class="description">
+							<p data-tag="description">Das Modul ‚Team und Strategie' baut auf den Erfahrungen des Pilotprojektes auf und flankiert das gleichzeitig stattfindenden Modul In-College. ‚Stimmig führen' leitet junge Führungskräfte an, die eine Verbindung von Professionalität und Menschlichkeit anstreben und versuchen eine Balance zwischen Effektivität und Humanität herzustellen. Stimmigkeit in der Führungsrolle entsteht durch Übereinstimmung mit dem eigenen Wesen, mit der Situation und Organisation sowie der Bereitschaft, das eigene Führungsverhalten in der Auseinandersetzung mit Kollegen zu überprüfen. Das Modul beschäftigt sich mit kommunikationspsychologischen Modellen, die sowohl für die Wahrnehmung und Diagnose zwischenmenschlicher Vorgänge, Verwicklungen und Konflikte im Alltag einer Führungskraft als auch Anstoß für die persönliche Entwicklung sein können.
+							</p>
+						</div>
+					</div>
+					<div>
+						<h3>Dateien<span class="description-toggle glyphicon glyphicon-chevron-down"></span></h3>
+						<div class="description">
+							<ul>
+								<li>Einführung.pdf</li>
+								<li>Wissenschaftliches Arbeiten.pdf</li>
+								<li>Exkursion.pdf</li>
+							</ul>
+						</div>
+					</div>
+
+					<script>
+
+
+					</script>
+
+				</div>
+
+			</div>
+			<div class="board">
+				<h3>Schwarzes brett</h3>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="add-course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Kurs hinzufügen</h4>
+				</div>
+				<div class="modal-body form">
+					<input type="text" class="form-control" placeholder="Kursnummer">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Hinzufügen</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="new-course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Kurs hinzufügen</h4>
+				</div>
+				<div class="modal-body">
+
+
+					<form class="form-horizontal" role="form">
+						<div class="panel panel-default">
+							<div class="panel-heading">Stammdaten</div>
+							<div class="panel-body">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">Kurs</label>
+									<div class="col-sm-10">
+										<input name="course" type="text" class="form-control" id="inputEmail3" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword3" class="col-sm-2 control-label">Raum</label>
+									<div class="col-sm-2">
+										<input name="room" type="text" class="form-control" id="inputPassword3" placeholder="">
+									</div>
+									<label for="inputPassword3" class="col-sm-1 control-label">Von</label>
+									<div class="col-sm-2">
+										<input name="time-from" type="text" class="form-control" id="inputPassword3" placeholder="00:00">
+									</div>
+									<label for="inputPassword3" class="col-sm-1 control-label">bis</label>
+									<div class="col-sm-2">
+										<input name="time-till" type="text" class="form-control" id="inputPassword3" placeholder="00:00">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword3" class="col-sm-2 control-label">Beschreibung</label>
+									<div class="col-sm-10">
+										<textarea name="description" class="form-control" id="inputPassword3" placeholder="" rows="4"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">Dateien</div>
+							<div class="panel-body">
+								<div class="form-group">
+									<label for="exampleInputFile" class="col-sm-2 control-label">Hinzufügen</label>
+									<div class="col-sm-9">
+										<input type="file" id="exampleInputFile" class="">
+									</div>
+								</div>
+									<ul>
+										<li>Semesterplan.pdf</li>
+										<li>Leistungen.pdf</li>
+									</ul>
+							</div>
+						</div>
+					</form>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-warning">Hinzufügen</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+				</div>
+				<script>
+
+					var $newCourse = $('#new-course');
+
+					$newCourse.find('button[type=submit]').click(function(e) {
+						var course = $newCourse.find('input[name=course]').val();
+						var room = $newCourse.find('input[name=room]').val();
+						var timeFrom = $newCourse.find('input[name=time-from]').val();
+						var timeTill = $newCourse.find('input[name=time-till]').val();
+						var description = $newCourse.find('textarea[name=description]').val();
+						var teacher = 'Dipl. Des. Bianka Grottendieck';
+						var email = 'kontakt@b-grottendieck.de';
+
+						$('[data-tag=course]').text(course);
+						$('[data-tag=room]').text(room);
+						$('[data-tag=time-from]').text(timeFrom);
+						$('[data-tag=time-till]').text(timeTill);
+						$('[data-tag=description]').text(description);
+						$('[data-tag=teacher]').text(teacher);
+						$('[data-tag=email]').text(email);
+
+						$newCourse.modal('hide');
+
+//
+//		$modal.on('hidden.bs.modal', function () {
+//			$(this).remove();
+//		});
+					});
+
+				</script>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

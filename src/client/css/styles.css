@@ -1,0 +1,239 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,500,300);
+ html {
+	height: 100%;
+	padding:0;
+	margin:0;
+
+}
+body {
+	padding:0;
+	margin:0;
+	height: 100%;
+	font-family: Raleway, sans-serif;
+	line-height: 1.25em;
+	color: #666;
+}
+body .login {
+	height: 100%;
+	background-image: url(../img/bg.jpg);
+}
+.wrapper {
+	height: 100%;
+	background-color: rgba(0, 0, 0, .7);
+}
+.hawk-logo {
+	background-image: url(../img/logo.png);
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	margin-bottom: 40px;
+}
+.hawk-logo-small {
+	background-image: url(../img/logo-small.png);
+	height: 56px;
+	width: 150px;
+	margin: 20px 0 0 25px;
+	margin-bottom: 40px;
+}
+.login-form {
+	width: 250px;
+	height: 400px;
+	margin-left: -125px;
+	margin-top: -200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.login-form-container {
+	box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
+}
+.signup-button {
+	margin: 10px 0 0 0 !important;
+	background-color: #bbb;
+	box-shadow: 5px 5px 30px rgba(0, 0, 0, .5);
+}
+/* START SEITE */
+
+h1 {
+	font-size: 1.3em;
+	font-weight: 700;
+	color: #f3b43d;
+}
+h2 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0 0 0 0;
+}
+h3 {
+	font-weight: bold;
+	font-size: 1em;
+	margin: 5px 5px 5px 0;
+}
+.row {
+	position: relative;
+	padding:0;
+	margin:0;
+	height: 100%;
+}
+
+.navigation {
+	position: absolute;
+	height: auto;
+	background-color: #fbfbfb;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+	z-index: 50;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.mobile-toggle {
+	display: none;
+	position: absolute;
+	right: 0;
+	height: 36px;
+	width: 40px;
+	font-size: 1.4em;
+	margin: 5px;
+}
+
+.content {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin:0;
+	padding:0 0 0 300px;
+	background-color: #eee;
+	background-image: url(../img/board.jpg);
+	background-position: center;
+	z-index: 5;
+}
+
+.header {
+	z-index: 10;
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.header .data p {
+	margin: 0;
+	color: #999;
+	font-size: .83em;
+	line-height: 1.3em;
+}
+
+.header .data {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.board {
+	position: relative;
+	z-index: 1;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 30px;
+
+}
+
+@media (max-width: 800px) {
+	.navigation {
+		-height: auto;
+		width: 300px;
+		left: -250px;
+	}
+	.active {
+		margin-left: 250px;
+	}
+	.content {
+		padding-left: 50px;
+	}
+	.mobile-toggle {
+		display: block;
+	}
+}
+@media (min-width: 801px) {
+	.navigation {
+		width: 300px;
+		-height: auto;
+	}
+}
+@media (min-width: 1300px) {
+	.header-content, .board {
+		width: 920px;
+	}
+}
+.profile,
+.courses,
+.archive {
+	margin: 65px 0 10px 40px;
+}
+.profile {
+	margin: 100px 0 10px 40px;
+}
+.navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.navigation li {
+	margin: 15px 0 4px 0;
+}
+.profile li {
+	margin: 1px 0 1px 0;
+}
+.courses li {
+	color: #999;
+}
+.courses li:hover {
+	color: #666;
+	cursor: pointer;
+}
+.courses .add {
+	margin: 15px 0 0 0;
+	font-size: .8em;
+	font-weight: 800;
+}
+.archive li {
+	margin: 2px 0 2px 0;
+}
+.archive span {
+	margin-right: 10px;
+}
+.archive ul {
+	margin-left: 0;
+}
+.archive ul ul {
+	margin-left: 24px;
+}
+.navigation li p {
+	margin: -2px 0 -2px 0;
+	padding: 0;
+	font-size: .83em;
+}
+
+.description {
+	border: 0px solid red;
+	overflow: hidden;
+	height: auto;
+}
+
+.description-active {
+	height: auto;
+}
+
+.description-toggle {
+	-display: block;
+	margin:auto;
+	padding: 0.6em;
+	border: 0px solid blue;
+	text-align: center;
+	cursor: pointer;
+}
